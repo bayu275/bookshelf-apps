@@ -13,6 +13,7 @@
 
 html {
     font-size: $BASE-FONT-SIZE;
+    scroll-behavior: smooth;
 
     @media screen and (max-width: $LARGE-SCREEN) {
         font-size: 18px;
@@ -57,6 +58,89 @@ header {
     a {
         margin-top: 1rem;
         box-shadow: $DEFAULT-SHADOW;
+    }
+}
+
+main {
+    margin-top: 2rem;
+    @include flex-container;
+    padding: 0 5rem;
+
+    @media screen and (max-width: $MEDIUM-SCREEN) {
+        padding: 0 2rem;
+    }
+}
+
+.add-book {
+    flex: 1 1 30rem;
+    max-width: 30rem;
+    background-color: color($COLOR-SECONDARY, 60);
+    padding: 2rem;
+    border-radius: $DEFAULT-ROUNDED;
+    box-shadow: $DEFAULT-SHADOW;
+
+    &__title {
+        font-size: 2rem;
+        width: 100%;
+        background-color: color($COLOR-SECONDARY, 30);
+        border-radius: $DEFAULT-ROUNDED;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+    &__description {
+        text-align: center;
+        font-weight: 300;
+    }
+
+    &__form {
+        @include flex-container(column, flex-start);
+        gap: 1.8rem;
+
+        & > .form__input {
+            label {
+                font-size: 1.2rem;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+            input {
+                width: 100%;
+                font-size: 1.2rem;
+                border-radius: $DEFAULT-ROUNDED;
+                padding: 0.5rem 1rem;
+                border: none;
+                outline: none;
+                background-color: color($COLOR-PRIMARY, 60);
+                color: color($COLOR-SECONDARY, 10);
+                box-shadow: $DEFAULT-SHADOW;
+            }
+            &.wrapper {
+                @include flex-container(row, flex-start, center);
+                gap: 1rem;
+                padding: 0.5rem;
+            }
+            & > .year {
+                @include flex-container(row, flex-start, center);
+                gap: 1rem;
+                input {
+                    max-width: 5rem;
+                }
+            }
+            & > .read {
+                @include flex-container(row, flex-start, center);
+                gap: 1rem;
+
+                input {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+        }
+        button {
+            outline: none;
+            border: none;
+            cursor: pointer;
+            box-shadow: $DEFAULT-SHADOW;
+        }
     }
 }
 
