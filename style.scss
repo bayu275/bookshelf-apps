@@ -12,19 +12,17 @@
 }
 
 html {
-    font-size: $BASE-FONT-SIZE;
+    font-size: 110%;
     scroll-behavior: smooth;
 
-    @media screen and (max-width: $LARGE-SCREEN) {
-        font-size: 18px;
+    @media screen and (min-width: $MEDIUM-SCREEN) and (max-width: $LARGE-SCREEN) {
+        font-size: 90%;
     }
-
-    @media screen and (max-width: $MEDIUM-SCREEN) {
-        font-size: $BASE-FONT-SIZE;
+    @media screen and (min-width: $SMALL-SCREEN) and (max-width: $MEDIUM-SCREEN) {
+        font-size: 80%;
     }
-
     @media screen and (max-width: $SMALL-SCREEN) {
-        font-size: 14px;
+        font-size: 70%;
     }
 }
 
@@ -35,118 +33,189 @@ body {
     min-height: 5000px;
 }
 
-header {
+.header {
     background-color: color($COLOR-SECONDARY, 60);
-    @include flex-container(column, center, center);
-    gap: 1rem;
-    padding: 2rem;
+    position: relative;
     min-height: 100vh;
-    text-align: center;
 
-    h1 {
-        text-shadow: $DEFAULT-SHADOW;
-        font-size: 2.5rem;
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
     }
 
-    p {
-        text-align: justify;
-        max-width: 40ch;
+    &__title {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
         text-shadow: $DEFAULT-SHADOW;
-        font-size: 1.25rem;
+
+        span {
+            color: color($COLOR-PRIMARY, 10);
+        }
+    }
+
+    &__description {
+        text-align: center;
+        font-size: 1.2rem;
         font-weight: 300;
+        max-width: 40ch;
+        margin: 0 auto;
+        text-shadow: $DEFAULT-SHADOW;
     }
-    a {
-        margin-top: 1rem;
+
+    &__cta {
+        display: block;
+        padding: 0.5rem 1.5rem;
+        font-size: 1.8rem;
+        border-radius: $DEFAULT-ROUNDED;
+        font-weight: 700;
+        margin: auto;
+        max-width: fit-content;
+        text-decoration: none;
+        color: color($COLOR-PRIMARY, 60);
+        background-color: color($COLOR-PRIMARY, 10);
         box-shadow: $DEFAULT-SHADOW;
     }
 }
 
-main {
+.main {
+    display: flex;
+    gap: 1rem;
     margin-top: 2rem;
-    @include flex-container;
-    padding: 0 5rem;
+    padding: 1.5rem;
 
-    @media screen and (max-width: $MEDIUM-SCREEN) {
-        padding: 0 2rem;
+    @media screen and (max-width: $SMALL-SCREEN) {
+        flex-direction: column;
     }
-}
 
-.add-book {
-    flex: 1 1 30rem;
-    max-width: 30rem;
-    background-color: color($COLOR-SECONDARY, 60);
-    padding: 2rem;
-    border-radius: $DEFAULT-ROUNDED;
-    box-shadow: $DEFAULT-SHADOW;
-
-    &__title {
-        font-size: 2rem;
-        width: 100%;
-        background-color: color($COLOR-SECONDARY, 30);
+    .add-book {
+        flex: 1 1 30%;
+        padding: 1.5rem;
+        background-color: color($COLOR-SECONDARY, 60);
         border-radius: $DEFAULT-ROUNDED;
-        text-align: center;
-        padding: 0.5rem 0;
-    }
-    &__description {
-        text-align: center;
-        font-weight: 300;
-    }
+        box-shadow: $DEFAULT-SHADOW;
 
-    &__form {
-        @include flex-container(column, flex-start);
-        gap: 1.8rem;
+        &__title {
+            position: relative;
+            font-size: 2rem;
+            max-width: fit-content;
+            margin: 0 auto 1.5rem;
 
-        & > .form__input {
-            label {
-                font-size: 1.2rem;
-                font-weight: 500;
-                text-transform: uppercase;
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 110%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+                border-bottom: 2px solid color($COLOR-PRIMARY, 60);
             }
-            input {
-                width: 100%;
-                font-size: 1.2rem;
-                border-radius: $DEFAULT-ROUNDED;
-                padding: 0.5rem 1rem;
+
+            span {
+                color: color($COLOR-PRIMARY, 10);
+            }
+        }
+
+        &__description {
+            text-align: justify;
+            font-weight: 300;
+            max-width: 34ch;
+            margin: 0 auto 1.5rem;
+        }
+
+        &__form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        &__input {
+            display: flex;
+            flex-direction: column;
+
+            &-field {
+                font-size: 1rem;
+                padding: 0.5rem;
                 border: none;
                 outline: none;
+                border-radius: $DEFAULT-ROUNDED;
                 background-color: color($COLOR-PRIMARY, 60);
-                color: color($COLOR-SECONDARY, 10);
+                color: color($COLOR-PRIMARY, 10);
                 box-shadow: $DEFAULT-SHADOW;
-            }
-            &.wrapper {
-                @include flex-container(row, flex-start, center);
-                gap: 1rem;
-                padding: 0.5rem;
-            }
-            & > .year {
-                @include flex-container(row, flex-start, center);
-                gap: 1rem;
-                input {
-                    max-width: 5rem;
+
+                &.year {
+                    text-align: center;
                 }
             }
-            & > .read {
-                @include flex-container(row, flex-start, center);
+
+            &--year,
+            &--read {
+                flex-direction: row;
+                align-items: center;
                 gap: 1rem;
 
-                input {
-                    width: 2rem;
-                    height: 2rem;
+                label {
+                    margin-bottom: 0;
                 }
             }
         }
-        button {
-            outline: none;
+
+        &__label,
+        &__label-checkbox {
+            margin-bottom: 0.1rem;
+            font-weight: 700;
+        }
+
+        &__checkbox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80%;
+            aspect-ratio: 1;
+            border-radius: 4px;
+            background-color: color($COLOR-PRIMARY, 60);
+            transition: background-color 0.3s ease-in-out;
+            box-shadow: $DEFAULT-SHADOW;
+
+            &.checked {
+                background-color: color($COLOR-PRIMARY, 10);
+
+                & > .add-book__checkbox--icon {
+                    transform: scale(1);
+                    color: color($COLOR-PRIMARY, 60);
+                }
+            }
+
+            &--icon {
+                color: color($COLOR-SECONDARY, 10);
+                font-size: 1.5rem;
+                font-weight: 700;
+                transform: scale(0);
+                transition: all 0.3s ease-in-out;
+            }
+        }
+
+        &__input-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        &__submit {
+            padding: 0.5rem 0;
+            border-radius: $DEFAULT-ROUNDED;
             border: none;
-            cursor: pointer;
+            font-weight: 700;
+            color: color($COLOR-PRIMARY, 60);
+            background-color: color($COLOR-PRIMARY, 10);
             box-shadow: $DEFAULT-SHADOW;
         }
     }
-}
 
-.btn {
-    @include button-base;
-    background-color: color($COLOR-PRIMARY, 10);
-    color: color($COLOR-PRIMARY, 60);
-    font-size: 1.25rem;
+    .book-section {
+        flex: 1 1 45%;
+        background-color: color($COLOR-SECONDARY, 60);
+    }
 }

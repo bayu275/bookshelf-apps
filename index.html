@@ -8,73 +8,84 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+        <!-- Box icons -->
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
         <!-- SCSS -->
         <link rel="stylesheet" href="/style.scss" />
         <title>Bookshelf Apps</title>
     </head>
     <body>
-        <header>
-            <h1>Bookshelf Apps</h1>
-            <p>
-                Manage your book collection effortlessly! Try our library data management app for a more organized and
-                enjoyable reading experience. Discover your favorite books, track your reading progress, and get your
-                private library sorted today!
-            </p>
-            <img src="/images/header-icon.png" alt="header image" />
-            <a href="#start" class="btn">Get Started</a>
+        <header class="header">
+            <section class="header__content">
+                <h1 class="header__title">Bookshelf <span>Apps</span></h1>
+                <p class="header__description">
+                    Simplify book collection management! Explore our app for an organized reading experience. Discover,
+                    track, and sort your favorite books effortlessly.
+                </p>
+                <img class="header__image" src="/images/header-icon.png" alt="header image" />
+                <a href="#start" class="header__cta">Try it now!</a>
+            </section>
         </header>
+
         <main id="start" class="main">
             <section class="add-book">
                 <div class="add-book__form">
-                    <h2 class="add-book__title">Add New Book</h2>
+                    <h2 class="add-book__title">Add New <span>Book</span></h2>
                     <p class="add-book__description">
                         Books on shelves📚, you in my heart ❤️. Each life chapter, you're on every page. 🌟
                     </p>
                     <form id="form" class="add-book__form">
-                        <div class="form__input">
-                            <label for="title" class="form__label">Title</label>
+                        <div class="add-book__input">
+                            <label for="title" class="add-book__label">Title</label>
                             <input
                                 type="text"
                                 name="title"
                                 id="title"
-                                class="form__input-field"
+                                class="add-book__input-field"
                                 placeholder="Book Title"
                                 required
                             />
                         </div>
-                        <div class="form__input">
-                            <label for="author" class="form__label">Author</label>
+                        <div class="add-book__input">
+                            <label for="author" class="add-book__label">Author</label>
                             <input
                                 type="text"
                                 name="author"
                                 id="author"
-                                class="form__input-field"
+                                class="add-book__input-field"
                                 placeholder="Book Author"
                                 required
                             />
                         </div>
-                        <div class="form__input wrapper">
-                            <div class="form__input year">
-                                <label for="year" class="form__label">Year</label>
+                        <div class="add-book__input-group">
+                            <div class="add-book__input add-book__input--year">
+                                <label for="year" class="add-book__label">Year</label>
                                 <input
                                     type="number"
                                     name="year"
                                     id="year"
-                                    class="form__input-field"
+                                    class="add-book__input-field year"
                                     min="1900"
                                     max="2024"
-                                    maxlength="4"
                                     placeholder="2024"
                                     required
                                 />
                             </div>
-                            <div class="form__input read">
-                                <label for="read" class="form__label-checkbox">Read</label>
-                                <input type="checkbox" name="read" id="read" class="form__checkbox" />
+                            <div class="add-book__input add-book__input--read">
+                                <label for="read" class="add-book__label-checkbox">Read</label>
+                                <span id="read" role="checkbox" tabindex="0" class="add-book__checkbox"
+                                    ><i class="bx bx-check add-book__checkbox--icon"></i
+                                ></span>
                             </div>
                         </div>
-                        <button type="submit" class="btn">Add Book</button>
+                        <button type="submit" class="add-book__submit">Add Book</button>
                     </form>
+                </div>
+            </section>
+
+            <section class="book-section">
+                <div>
+                    <h1>Hello World</h1>
                 </div>
             </section>
         </main>

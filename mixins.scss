@@ -1,20 +1,7 @@
+@import "./variables.scss";
+
 @mixin reset {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-@mixin button-base {
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-}
-
-@mixin flex-container($direction: row, $justify: flex-start, $align: stretch) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
 }
