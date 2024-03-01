@@ -30,7 +30,6 @@ body {
     font-family: $FF-PRIMARY;
     background-color: color($COLOR-PRIMARY, 60);
     color: color($COLOR-PRIMARY, 30);
-    min-height: 5000px;
 }
 
 .header {
@@ -83,7 +82,7 @@ body {
 .main {
     display: flex;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-block: 2rem;
     padding: 1.5rem;
 
     @media screen and (max-width: $SMALL-SCREEN) {
@@ -411,6 +410,27 @@ body {
 
             img {
                 height: 14px;
+            }
+        }
+    }
+}
+
+footer {
+    padding: 1rem;
+    background-color: color($COLOR-SECONDARY, 60);
+
+    p {
+        width: fit-content;
+        margin: 0 auto;
+
+        a {
+            color: color($COLOR-PRIMARY, 30);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+
+            &:hover {
+                color: color($COLOR-PRIMARY, 10);
             }
         }
     }
