@@ -68,7 +68,7 @@ body {
     &__cta {
         display: block;
         padding: 0.5rem 1.5rem;
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         border-radius: $DEFAULT-ROUNDED;
         font-weight: 700;
         margin: auto;
@@ -91,8 +91,9 @@ body {
     }
 
     .add-book {
-        flex: 1 1 30%;
+        flex: 1 1 20%;
         padding: 1.5rem;
+        height: fit-content;
         background-color: color($COLOR-SECONDARY, 60);
         border-radius: $DEFAULT-ROUNDED;
         box-shadow: $DEFAULT-SHADOW;
@@ -179,6 +180,7 @@ body {
             background-color: color($COLOR-PRIMARY, 60);
             transition: background-color 0.3s ease-in-out;
             box-shadow: $DEFAULT-SHADOW;
+            cursor: pointer;
 
             &.checked {
                 background-color: color($COLOR-PRIMARY, 10);
@@ -209,13 +211,207 @@ body {
             border: none;
             font-weight: 700;
             color: color($COLOR-PRIMARY, 60);
+            cursor: pointer;
             background-color: color($COLOR-PRIMARY, 10);
             box-shadow: $DEFAULT-SHADOW;
         }
     }
 
-    .book-section {
-        flex: 1 1 45%;
-        background-color: color($COLOR-SECONDARY, 60);
+    .bookshelf {
+        flex: 1 1 50%;
+
+        &__filters {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        &__filter {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            font-family: inherit;
+            font-weight: 700;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: none;
+            color: color($COLOR-PRIMARY, 30);
+            cursor: pointer;
+            background-color: color($COLOR-SECONDARY, 60);
+            border-radius: $DEFAULT-ROUNDED;
+            box-shadow: $DEFAULT-SHADOW;
+            transition: background-color 0.3s ease-in-out;
+
+            &.active {
+                background-color: color($COLOR-PRIMARY, 10);
+                color: color($COLOR-PRIMARY, 60);
+
+                .bookshelf__count {
+                    color: color($COLOR-PRIMARY, 60);
+                }
+            }
+        }
+
+        &__count {
+            color: color($COLOR-PRIMARY, 10);
+        }
+
+        &__filter-search {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: color($COLOR-SECONDARY, 60);
+            border-radius: $DEFAULT-ROUNDED;
+            box-shadow: $DEFAULT-SHADOW;
+
+            .search-icon {
+                color: color($COLOR-PRIMARY, 10);
+            }
+        }
+
+        &__search {
+            width: 100%;
+            padding: 0 0.5rem;
+            border: none;
+            outline: none;
+            background-color: color($COLOR-SECONDARY, 60);
+            color: color($COLOR-PRIMARY, 10);
+        }
+
+        &__content {
+            padding: 1.5rem;
+            background-color: color($COLOR-SECONDARY, 60);
+            border-radius: $DEFAULT-ROUNDED;
+            box-shadow: $DEFAULT-SHADOW;
+        }
+
+        &__content-title {
+            text-align: center;
+            position: relative;
+            width: fit-content;
+            margin: 0 auto;
+            font-size: 2rem;
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 110%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80%;
+                border-bottom: 2px solid color($COLOR-PRIMARY, 60);
+            }
+        }
+
+        &__subtitle {
+            color: color($COLOR-PRIMARY, 10);
+        }
+
+        &__empty {
+            margin-top: 2rem;
+            padding: 1rem;
+            text-align: center;
+            background-color: color($COLOR-SECONDARY, 30);
+            border-radius: $DEFAULT-ROUNDED;
+            box-shadow: $DEFAULT-SHADOW;
+        }
+
+        &__category {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+
+            @media screen and (max-width: $MEDIUM-SCREEN) {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        &__category-item {
+            padding: 1rem;
+            height: fit-content;
+            background-color: color($COLOR-SECONDARY, 30);
+            border-radius: $DEFAULT-ROUNDED;
+            box-shadow: $DEFAULT-SHADOW;
+        }
+
+        &__category-title {
+            font-size: 1.5rem;
+            text-align: center;
+            color: color($COLOR-PRIMARY, 10);
+            margin-bottom: 0.5rem;
+            box-shadow: $DEFAULT-SHADOW;
+        }
+
+        &__book-info {
+            padding: 1rem;
+            background-color: color($COLOR-PRIMARY, 60);
+            margin-bottom: 0.5rem;
+            border-radius: $DEFAULT-ROUNDED;
+            box-shadow: $DEFAULT-SHADOW;
+        }
+
+        &__title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        &__author,
+        &__year {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        &__year {
+            margin-bottom: 1rem;
+        }
+
+        &__icons {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            img {
+                height: 40px;
+            }
+        }
+
+        &__icon {
+            cursor: pointer;
+            height: 30px;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+
+            &.finish {
+                background-color: $COLOR-SUCCESS;
+            }
+
+            &.edit {
+                background-color: $COLOR-INFO;
+            }
+
+            &.delete {
+                background-color: $COLOR-ERROR;
+            }
+
+            &.return {
+                background-color: color($COLOR-PRIMARY, 10);
+            }
+
+            img {
+                height: 14px;
+            }
+        }
     }
 }
