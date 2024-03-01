@@ -37,4 +37,18 @@ form.addEventListener('submit', (e) => {
     const newBook = { title, author, year, read };
     books.push(newBook);
     console.log(books);
+    openModal();
+});
+
+const openModal = () => {
+    const modal = $('.modal');
+    modal.classList.add('active');
+};
+
+const modal = $('.modal');
+
+modal.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal__submit')) {
+        modal.classList.remove('active');
+    }
 });
