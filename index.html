@@ -85,23 +85,23 @@
 
             <section class="bookshelf">
                 <div class="bookshelf__filters">
-                    <button class="bookshelf__filter active">All Books <span class="bookshelf__count">5</span></button>
-                    <button class="bookshelf__filter">Read <span class="bookshelf__count">3</span></button>
-                    <button class="bookshelf__filter">Unread <span class="bookshelf__count">2</span></button>
+                    <!-- <button class="bookshelf__filter active" data-filter="all">All Books <span class="bookshelf__count">5</span></button>
+                    <button class="bookshelf__filter" data-filter="read">Read <span class="bookshelf__count">3</span></button>
+                    <button class="bookshelf__filter" data-filter="unread">Unread <span class="bookshelf__count">2</span></button> -->
                     <div class="bookshelf__filter-search">
                         <i class="bx bx-search search-icon"></i>
                         <input type="text" class="bookshelf__search" placeholder="Search by title here..." />
                     </div>
                 </div>
                 <div class="bookshelf__content">
-                    <h2 class="bookshelf__content-title">My <span class="bookshelf__subtitle">Books</span></h2>
-                    <!-- <div class="bookshelf__info">
+                    <!-- <h2 class="bookshelf__content-title">My <span class="bookshelf__subtitle">Books</span></h2>
+                    <div class="bookshelf__info">
                         <div class="bookshelf__empty">
                             <h3 class="bookshelf__empty-message">No books</h3>
                         </div>
-                    </div> -->
+                    </div>
                     <div class="bookshelf__category">
-                        <div class="bookshelf__category-item">
+                        <div class="bookshelf__category-item" id="category-unread">
                             <h3 class="bookshelf__category-title">Unread</h3>
                             <div class="bookshelf__book-info">
                                 <p class="bookshelf__title">Title: Harry Potter Magic</p>
@@ -109,34 +109,18 @@
                                 <p class="bookshelf__year">Year: 2023</p>
                                 <div class="bookshelf__icons">
                                     <span class="bookshelf__icon finish">
-                                        <img src="public/images/finish-icon.svg" alt="finish icon" />
+                                        <img src="/images/finish-icon.svg" alt="finish icon" />
                                     </span>
                                     <span class="bookshelf__icon edit">
-                                        <img src="public/images/edit-icon.svg" alt="edit icon" />
+                                        <img src="/images/edit-icon.svg" alt="edit icon" />
                                     </span>
                                     <span class="bookshelf__icon delete">
-                                        <img src="public/images/delete-icon.svg" alt="delete icon" />
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="bookshelf__book-info">
-                                <p class="bookshelf__title">Title: Harry Potter Magic</p>
-                                <p class="bookshelf__author">Author: Bayu Setiawan</p>
-                                <p class="bookshelf__year">Year: 2023</p>
-                                <div class="bookshelf__icons">
-                                    <span class="bookshelf__icon finish">
-                                        <img src="public/images/finish-icon.svg" alt="finish icon" />
-                                    </span>
-                                    <span class="bookshelf__icon edit">
-                                        <img src="public/images/edit-icon.svg" alt="edit icon" />
-                                    </span>
-                                    <span class="bookshelf__icon delete">
-                                        <img src="public/images/delete-icon.svg" alt="delete icon" />
+                                        <img src="/images/delete-icon.svg" alt="delete icon" />
                                     </span>
                                 </div>
                             </div>
                         </div>
-                        <div class="bookshelf__category-item">
+                        <div class="bookshelf__category-item" id="category-read">
                             <h3 class="bookshelf__category-title">Read</h3>
                             <div class="bookshelf__book-info">
                                 <p class="bookshelf__title">Title: Harry Potter Magic Power Ranger</p>
@@ -144,41 +128,25 @@
                                 <p class="bookshelf__year">Year: 2023</p>
                                 <div class="bookshelf__icons">
                                     <span class="bookshelf__icon return">
-                                        <img src="public/images/return-icon.svg" alt="return icon" />
+                                        <img src="/images/return-icon.svg" alt="return icon" />
                                     </span>
                                     <span class="bookshelf__icon edit">
-                                        <img src="public/images/edit-icon.svg" alt="edit icon" />
+                                        <img src="/images/edit-icon.svg" alt="edit icon" />
                                     </span>
                                     <span class="bookshelf__icon delete">
-                                        <img src="public/images/delete-icon.svg" alt="delete icon" />
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="bookshelf__book-info">
-                                <p class="bookshelf__title">Title: Harry Potter Magic</p>
-                                <p class="bookshelf__author">Author: Bayu Setiawan</p>
-                                <p class="bookshelf__year">Year: 2023</p>
-                                <div class="bookshelf__icons">
-                                    <span class="bookshelf__icon finish">
-                                        <img src="public/images/finish-icon.svg" alt="finish icon" />
-                                    </span>
-                                    <span class="bookshelf__icon edit">
-                                        <img src="public/images/edit-icon.svg" alt="edit icon" />
-                                    </span>
-                                    <span class="bookshelf__icon delete">
-                                        <img src="public/images/delete-icon.svg" alt="delete icon" />
+                                        <img src="/images/delete-icon.svg" alt="delete icon" />
                                     </span>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </section>
         </main>
         <footer>
             <p>
                 Copyright &copy; 2024,
-                <a href="www.linkedin.com/in/bayuusetiawan" target="_blank">Bayu Setiawan</a>
+                <a href="https://www.linkedin.com/in/bayuusetiawan" target="_blank">Bayu Setiawan</a>
             </p>
         </footer>
 
@@ -186,11 +154,63 @@
             <div class="modal__content">
                 <div class="modal__dialog">
                     <span class="modal__icon-container">
-                        <img src="public/images/ok-icon.svg" alt="ok icon" class="modal__icon" />
+                        <img src="/images/ok-icon.svg" alt="ok icon" class="modal__icon" />
                     </span>
                     <p class="modal__message">Successfully added a book!</p>
                     <button class="modal__submit">OK</button>
                 </div>
+            </div>
+        </div>
+
+        <div class="edit-modal" id="edit-modal">
+            <div class="edit-modal__content">
+                <span class="edit-modal__close"><i class="bx bx-x edit-modal__close"></i></span>
+                <form id="edit-form" class="edit-modal__form">
+                    <div class="edit-modal__input">
+                        <label for="edit-title" class="edit-modal__label">Title</label>
+                        <input
+                            type="text"
+                            name="edit-title"
+                            id="edit-title"
+                            class="edit-modal__input-field"
+                            placeholder="Book Title"
+                            required
+                        />
+                    </div>
+                    <div class="edit-modal__input">
+                        <label for="edit-author" class="edit-modal__label">Author</label>
+                        <input
+                            type="text"
+                            name="edit-author"
+                            id="edit-author"
+                            class="edit-modal__input-field"
+                            placeholder="Book Author"
+                            required
+                        />
+                    </div>
+                    <div class="edit-modal__input-group">
+                        <div class="edit-modal__input edit-modal__input--year">
+                            <label for="edit-year" class="edit-modal__label">Year</label>
+                            <input
+                                type="number"
+                                name="edit-year"
+                                id="edit-year"
+                                class="edit-modal__input-field year"
+                                min="1900"
+                                max="2024"
+                                placeholder="2024"
+                                required
+                            />
+                        </div>
+                        <div class="edit-modal__input edit-modal__input--read">
+                            <label for="edit-read" class="edit-modal__label-checkbox">Read</label>
+                            <span id="edit-read" role="checkbox" tabindex="0" class="edit-modal__checkbox"
+                                ><i class="bx bx-check edit-modal__checkbox--icon"></i
+                            ></span>
+                        </div>
+                    </div>
+                    <button type="submit" class="edit-modal__submit">Update Book</button>
+                </form>
             </div>
         </div>
 

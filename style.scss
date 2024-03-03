@@ -87,6 +87,7 @@ body {
 
     @media screen and (max-width: $SMALL-SCREEN) {
         flex-direction: column;
+        gap: 3rem;
     }
 
     .add-book {
@@ -422,6 +423,7 @@ footer {
     p {
         width: fit-content;
         margin: 0 auto;
+        font-size: 0.8rem;
 
         a {
             color: color($COLOR-PRIMARY, 30);
@@ -501,5 +503,142 @@ footer {
         &:hover {
             background-color: color($COLOR-PRIMARY, 10);
         }
+    }
+}
+
+.edit-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(34, 40, 49, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    scale: 0;
+    transition: scale 0.3s ease;
+
+    &.active {
+        scale: 1;
+    }
+
+    &__content {
+        position: relative;
+        width: 30rem;
+        padding: 2rem 1rem;
+        background-color: color($COLOR-SECONDARY, 60);
+        border-radius: $DEFAULT-ROUNDED;
+        box-shadow: $DEFAULT-SHADOW;
+        scale: 0;
+        transition: all 0.5s ease;
+    }
+
+    &__close {
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+            cursor: pointer;
+            color: $COLOR-ERROR;
+        }
+    }
+
+    &.active &__content {
+        scale: 1;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        transition: all 0.7s ease;
+    }
+
+    &__input {
+        display: flex;
+        flex-direction: column;
+
+        &-field {
+            font-size: 1rem;
+            padding: 0.5rem;
+            border: none;
+            outline: none;
+            border-radius: $DEFAULT-ROUNDED;
+            background-color: color($COLOR-PRIMARY, 60);
+            color: color($COLOR-PRIMARY, 10);
+            box-shadow: $DEFAULT-SHADOW;
+
+            &.year {
+                text-align: center;
+            }
+        }
+
+        &--year,
+        &--read {
+            flex-direction: row;
+            align-items: center;
+            gap: 1rem;
+
+            label {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__label,
+    &__label-checkbox {
+        margin-bottom: 0.1rem;
+        font-weight: 700;
+    }
+
+    &__checkbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80%;
+        aspect-ratio: 1;
+        border-radius: 4px;
+        background-color: color($COLOR-PRIMARY, 60);
+        transition: background-color 0.3s ease-in-out;
+        box-shadow: $DEFAULT-SHADOW;
+        cursor: pointer;
+
+        &.checked {
+            background-color: color($COLOR-PRIMARY, 10);
+
+            & > .edit-modal__checkbox--icon {
+                transform: scale(1);
+                color: color($COLOR-PRIMARY, 60);
+            }
+        }
+
+        &--icon {
+            color: color($COLOR-SECONDARY, 10);
+            font-size: 1.5rem;
+            font-weight: 700;
+            transform: scale(0);
+            transition: all 0.3s ease-in-out;
+        }
+    }
+
+    &__input-group {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__submit {
+        padding: 0.5rem 0;
+        border-radius: $DEFAULT-ROUNDED;
+        border: none;
+        font-weight: 700;
+        color: color($COLOR-PRIMARY, 60);
+        cursor: pointer;
+        background-color: color($COLOR-PRIMARY, 10);
+        box-shadow: $DEFAULT-SHADOW;
     }
 }
