@@ -22,7 +22,7 @@
                     Simplify book collection management! Explore our app for an organized reading experience. Discover,
                     track, and sort your favorite books effortlessly.
                 </p>
-                <img class="header__image" src="/images/header-icon.png" alt="header image" />
+                <img class="header__image" src="/images/header-icon.png" alt="Header Image" />
                 <a href="#start" class="header__cta">Try it now!</a>
             </section>
         </header>
@@ -73,7 +73,13 @@
                             </div>
                             <div class="add-book__input add-book__input--read">
                                 <label for="read" class="add-book__label-checkbox">Read</label>
-                                <span id="read" role="checkbox" tabindex="0" class="add-book__checkbox"
+                                <span
+                                    id="read"
+                                    role="checkbox"
+                                    aria-label="Toggle Read Status"
+                                    aria-checked="false"
+                                    tabindex="0"
+                                    class="add-book__checkbox"
                                     ><i class="bx bx-check add-book__checkbox--icon"></i
                                 ></span>
                             </div>
@@ -85,62 +91,12 @@
 
             <section class="bookshelf">
                 <div class="bookshelf__filters">
-                    <!-- <button class="bookshelf__filter active" data-filter="all">All Books <span class="bookshelf__count">5</span></button>
-                    <button class="bookshelf__filter" data-filter="read">Read <span class="bookshelf__count">3</span></button>
-                    <button class="bookshelf__filter" data-filter="unread">Unread <span class="bookshelf__count">2</span></button> -->
                     <div class="bookshelf__filter-search">
                         <i class="bx bx-search search-icon"></i>
                         <input type="text" class="bookshelf__search" placeholder="Search by title here..." />
                     </div>
                 </div>
-                <div class="bookshelf__content">
-                    <!-- <h2 class="bookshelf__content-title">My <span class="bookshelf__subtitle">Books</span></h2>
-                    <div class="bookshelf__info">
-                        <div class="bookshelf__empty">
-                            <h3 class="bookshelf__empty-message">No books</h3>
-                        </div>
-                    </div>
-                    <div class="bookshelf__category">
-                        <div class="bookshelf__category-item" id="category-unread">
-                            <h3 class="bookshelf__category-title">Unread</h3>
-                            <div class="bookshelf__book-info">
-                                <p class="bookshelf__title">Title: Harry Potter Magic</p>
-                                <p class="bookshelf__author">Author: Bayu Setiawan</p>
-                                <p class="bookshelf__year">Year: 2023</p>
-                                <div class="bookshelf__icons">
-                                    <span class="bookshelf__icon finish">
-                                        <img src="/images/finish-icon.svg" alt="finish icon" />
-                                    </span>
-                                    <span class="bookshelf__icon edit">
-                                        <img src="/images/edit-icon.svg" alt="edit icon" />
-                                    </span>
-                                    <span class="bookshelf__icon delete">
-                                        <img src="/images/delete-icon.svg" alt="delete icon" />
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bookshelf__category-item" id="category-read">
-                            <h3 class="bookshelf__category-title">Read</h3>
-                            <div class="bookshelf__book-info">
-                                <p class="bookshelf__title">Title: Harry Potter Magic Power Ranger</p>
-                                <p class="bookshelf__author">Author: Bayu Setiawan</p>
-                                <p class="bookshelf__year">Year: 2023</p>
-                                <div class="bookshelf__icons">
-                                    <span class="bookshelf__icon return">
-                                        <img src="/images/return-icon.svg" alt="return icon" />
-                                    </span>
-                                    <span class="bookshelf__icon edit">
-                                        <img src="/images/edit-icon.svg" alt="edit icon" />
-                                    </span>
-                                    <span class="bookshelf__icon delete">
-                                        <img src="/images/delete-icon.svg" alt="delete icon" />
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                </div>
+                <div class="bookshelf__content"></div>
             </section>
         </main>
         <footer>
@@ -204,7 +160,13 @@
                         </div>
                         <div class="edit-modal__input edit-modal__input--read">
                             <label for="edit-read" class="edit-modal__label-checkbox">Read</label>
-                            <span id="edit-read" role="checkbox" tabindex="0" class="edit-modal__checkbox"
+                            <span
+                                id="edit-read"
+                                role="checkbox"
+                                aria-label="Toggle Read Status"
+                                aria-checked="false"
+                                tabindex="0"
+                                class="edit-modal__checkbox"
                                 ><i class="bx bx-check edit-modal__checkbox--icon"></i
                             ></span>
                         </div>
